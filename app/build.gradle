@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "id.ac.dutabangsa.rumahfilm"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField 'String', "ApiKey", "\"3ae3f03f96204733c0e6b0d596ac9ccb\""
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:exifinterface:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:design:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.ext.constraintLayoutLibVersion}"
+    implementation "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation "junit:junit:${rootProject.ext.jUnitLibVersion}"
+    androidTestImplementation "com.android.support.test:runner:${rootProject.ext.testRunnerLibVersion}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ext.espressoLibVersion}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:cardview-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.codesgood:justifiedtextview:${rootProject.ext.justifiedtextviewLibVersion}"
+    implementation "de.hdodenhof:circleimageview:${rootProject.ext.circleimageviewLibVersion}"
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitLibVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofitLibVersion}"
+    implementation "com.squareup.picasso:picasso:${rootProject.ext.picassoLibVersion}"
+    implementation "com.jakewharton:butterknife:${rootProject.ext.butterknifeLibVersion}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.ext.butterknifeLibVersion}"
+    implementation "jp.wasabeef:recyclerview-animators:${rootProject.ext.recyclerviewAnimatorWasabeefLibVersion}"
+}
